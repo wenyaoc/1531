@@ -210,7 +210,7 @@ def test_auth_register_handle(url):
 def test_auth_login_return_type(url):
     # register
     dict_user = {
-        'email': 'cbyisaac@gmail.com',
+        'email': '123@gmail.com',
         'password': 'boyupass',
         'name_first': 'Boyuuuuuuuuuu',
         'name_last': 'Caiiiiiiiiii',
@@ -264,7 +264,7 @@ def test_auth_login_email_not_valid(url):
 def test_auth_login_email_not_match(url):
     # register an user
     dict_user = {
-        'email': 'cbyisaac@gmail.com',
+        'email': '123@gmail.com',
         'password': 'boyupass',
         'name_first': 'Boyuuuuuuuuuu',
         'name_last': 'Caiiiiiiiiii',
@@ -282,7 +282,7 @@ def test_auth_login_email_not_match(url):
 def test_auth_login_password_incorrect(url):
     # register an user
     dict_user = {
-        'email': 'cbyisaac@gmail.com',
+        'email': '123@gmail.com',
         'password': 'boyupass',
         'name_first': 'Boyuuuuuuuuuu',
         'name_last': 'Caiiiiiiiiii',
@@ -291,7 +291,7 @@ def test_auth_login_password_incorrect(url):
     # login with a wrong password
     with pytest.raises(requests.exceptions.HTTPError):
         requests.post(url + 'auth/login', json={
-            'email': 'cbyisaac@gmail.com',
+            'email': '123@gmail.com',
             'password': 'xukunpass'
         }).raise_for_status()
 
@@ -319,7 +319,7 @@ def test_auth_logout_invalid_token(url):
 # test the case that email is invalid for passwordreset request
 def test_passwordreset_request_email_invalid(url):
     dict_user = {
-        'email': 'cbyisaac@gmail.com',
+        'email': '123@gmail.com',
         'password': 'boyupass',
         'name_first': 'Boyuuuuuuuuuu',
         'name_last': 'Caiiiiiiiiii',

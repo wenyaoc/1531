@@ -38,7 +38,7 @@ def test_clear(url):
     assert len(users_dict['users']) == 2
     assert len(users_dict['users'][0].keys()) == 6
     assert users_dict['users'][0]['u_id'] == boyu_dict['u_id']
-    assert users_dict['users'][0]['email'] == 'cbyisaac@gmail.com'
+    assert users_dict['users'][0]['email'] == '123@gmail.com'
     assert users_dict['users'][0]['name_first'] == 'Boyu'
     assert users_dict['users'][0]['name_last'] == 'Cai'
     assert len(users_dict['users'][0]['handle_str']) <= 20
@@ -73,7 +73,7 @@ def test_clear(url):
 def test_users_all_token_invalid(url):
     clear()
     test_data = creatData(url)
-    test_data.register_user('cbyisaac@gmail.com', 'boyupass', 'Boyu',
+    test_data.register_user('123@gmail.com', 'boyupass', 'Boyu',
                             'Caiiiiiiiiiiiiiiiii')
     with pytest.raises(requests.exceptions.HTTPError):
         requests.get(url + 'users/all', params={"token": "invalid.token"}).raise_for_status()
@@ -83,7 +83,7 @@ def test_users_all_token_invalid(url):
 def test_users_all(url):
     clear()
     test_data = creatData(url)
-    boyu1_dict = test_data.register_user('cbyisaac@gmail.com', 'boyupass', 'Boyu',
+    boyu1_dict = test_data.register_user('123@gmail.com', 'boyupass', 'Boyu',
                                          'Caiiiiiiiiiiiiiiiii')
     boyu2_dict = test_data.register_user('isaac@gmail.com', 'boyupass', 'Boyu',
                                          'Caiiiiiiiiiiiiiiiii')
@@ -94,7 +94,7 @@ def test_users_all(url):
     assert len(users_dict['users'][0].keys()) == 6
     assert len(users_dict['users'][1].keys()) == 6
     assert users_dict['users'][0]['u_id'] == boyu1_dict['u_id']
-    assert users_dict['users'][0]['email'] == 'cbyisaac@gmail.com'
+    assert users_dict['users'][0]['email'] == '123@gmail.com'
     assert users_dict['users'][0]['name_first'] == 'Boyu'
     assert users_dict['users'][0]['name_last'] == 'Caiiiiiiiiiiiiiiiii'
     assert len(users_dict['users'][0]['handle_str']) <= 20

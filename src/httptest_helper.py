@@ -36,7 +36,7 @@ class creatData:
 
     def register_wenyao(self):
         dict_wenyao = {
-            'email': 'wenyaochen427@gmail.com',
+            'email': '427@gmail.com',
             'password': 'wenyaopass',
             'name_first': 'Wenyao',
             'name_last': 'Chen',
@@ -46,7 +46,7 @@ class creatData:
 
     def register_boyu(self):
         dict_boyu = {
-            'email': 'cbyisaac@gmail.com',
+            'email': '123@gmail.com',
             'password': 'boyupass',
             'name_first': 'Boyu',
             'name_last': 'Cai',
@@ -56,7 +56,7 @@ class creatData:
 
     def register_weiqiang(self):
         dict_weiqiang = {
-            'email': 'weiqiangzhuang24@gmail.com',
+            'email': '234@gmail.com',
             'password': 'weiqiangpass',
             'name_first': 'Weiqiang',
             'name_last': 'Zhuang',

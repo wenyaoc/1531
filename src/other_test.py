@@ -10,8 +10,8 @@ from auth import auth_register
 
 def initialise_data():
     clear()
-    boyu_dict = auth_register('cbyisaac@gmail.com', 'boyupass', 'Boyu', 'Cai')
-    wenyao_dict = auth_register('wenyaochen427@gmail.com', 'wenyaopass', 'Wenyao', 'Chen')
+    boyu_dict = auth_register('123@gmail.com', 'boyupass', 'Boyu', 'Cai')
+    wenyao_dict = auth_register('427@gmail.com', 'wenyaopass', 'Wenyao', 'Chen')
     return boyu_dict, wenyao_dict
 
 
@@ -30,7 +30,7 @@ def test_clear():
     # check user details already update
     assert len(users_dict['users']) == 2
     assert users_dict['users'][0]['u_id'] == boyu_dict['u_id']
-    assert users_dict['users'][0]['email'] == 'cbyisaac@gmail.com'
+    assert users_dict['users'][0]['email'] == '123@gmail.com'
     assert users_dict['users'][0]['name_first'] == 'Boyu'
     assert users_dict['users'][0]['name_last'] == 'Cai'
     # check channels list is already update
@@ -54,7 +54,7 @@ def test_users_all():
     users_dict = users_all(boyu_token['token'])
     assert len(users_dict['users']) == 2
     assert users_dict['users'][0]['u_id'] == boyu_token['u_id']
-    assert users_dict['users'][0]['email'] == 'cbyisaac@gmail.com'
+    assert users_dict['users'][0]['email'] == '123@gmail.com'
     assert users_dict['users'][0]['name_first'] == 'Boyu'
     assert users_dict['users'][0]['name_last'] == 'Cai'
 
@@ -263,6 +263,6 @@ def test_remove():
     users_dict = users_all(boyu_dict['token'])
     assert len(users_dict['users']) == 1
     assert users_dict['users'][0]['u_id'] == boyu_dict['u_id']
-    assert users_dict['users'][0]['email'] == 'cbyisaac@gmail.com'
+    assert users_dict['users'][0]['email'] == '123@gmail.com'
     assert users_dict['users'][0]['name_first'] == 'Boyu'
     assert users_dict['users'][0]['name_last'] == 'Cai'

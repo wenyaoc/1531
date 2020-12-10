@@ -13,9 +13,9 @@ from standup import standup_active, standup_send, standup_start
 
 def initialise_data():
     clear()
-    boyu_dict = auth_register('cbyisaac@gmail.com', 'boyupass', 'Boyu', 'Cai')
-    wenyao_dict = auth_register('wenyaochen427@gmail.com', 'wenyaopass', 'Wenyao', 'Chen')
-    weiqiang_dict = auth_register('weiqiangzhuang24@gmail.com', 'weiqiangpass',
+    boyu_dict = auth_register('123@gmail.com', 'boyupass', 'Boyu', 'Cai')
+    wenyao_dict = auth_register('427@gmail.com', 'wenyaopass', 'Wenyao', 'Chen')
+    weiqiang_dict = auth_register('234@gmail.com', 'weiqiangpass',
                                   'Weiqiang', 'Zhuang')
     channel_team1 = channels_create(wenyao_dict['token'], "team1", True)
     channel_team2 = channels_create(weiqiang_dict['token'], "team2", True)

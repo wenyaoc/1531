@@ -12,8 +12,8 @@ INVALID_IMG_URL = 'https://en.wikipedia.org/wiki/University_of_New_South_Wales#/
 
 def initialise_data():
     clear()
-    boyu_dict = auth_register('cbyisaac@gmail.com', 'boyupass', 'Boyu', 'Cai')
-    yuhan_dict = auth_register('yuhan.liang1021@gmail.com', 'yuhanpass', 'Yuhan', 'Liang')
+    boyu_dict = auth_register('123@gmail.com', 'boyupass', 'Boyu', 'Cai')
+    yuhan_dict = auth_register('1021@gmail.com', 'yuhanpass', 'Yuhan', 'Liang')
     channel_team1 = channels_create(boyu_dict['token'], "team1", True)
     return boyu_dict, yuhan_dict, channel_team1
 
@@ -38,7 +38,7 @@ def test_user_profile_u_id_same_user():
     # check length is equal 5
     assert len(profile_dict['user'].keys()) == 6
     assert profile_dict['user']['u_id'] == boyu_dict['u_id']
-    assert profile_dict['user']['email'] == 'cbyisaac@gmail.com'
+    assert profile_dict['user']['email'] == '123@gmail.com'
     assert profile_dict['user']['name_first'] == 'Boyu'
     assert profile_dict['user']['name_last'] == 'Cai'
     assert len(profile_dict['user']['handle_str']) <= 20
@@ -50,7 +50,7 @@ def test_user_profile_u_id_diff_user():
     profile_dict = user_profile(yuhan_dict['token'], boyu_dict['u_id'])
     assert len(profile_dict['user'].keys()) == 6
     assert profile_dict['user']['u_id'] == boyu_dict['u_id']
-    assert profile_dict['user']['email'] == 'cbyisaac@gmail.com'
+    assert profile_dict['user']['email'] == '123@gmail.com'
     assert profile_dict['user']['name_first'] == 'Boyu'
     assert profile_dict['user']['name_last'] == 'Cai'
     assert len(profile_dict['user']['handle_str']) <= 20
@@ -128,7 +128,7 @@ def test_user_profile_setemail_email_not_valid():
 def test_user_profile_setemail_email_already_used():
     boyu_dict, _, _ = initialise_data()
     with pytest.raises(InputError):
-        assert user_profile_setemail(boyu_dict['token'], 'yuhan.liang1021@gmail.com')
+        assert user_profile_setemail(boyu_dict['token'], '1021@gmail.com')
 
 
 # test update email

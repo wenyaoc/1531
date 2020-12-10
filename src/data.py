@@ -2,7 +2,7 @@
 USER_DATA = []
 '''
     {
-        'email': 'cbyisaac@gmail.com',
+        'email': '123@gmail.com',
         'password': 'boyupass',
         'name_first': 'Boyu',
         'name_last': 'Cai',
@@ -11,7 +11,7 @@ USER_DATA = []
         'handle': "bcai"
     },
     {
-        'email': 'wenyaochen427@gmail.com',
+        'email': '427@gmail.com',
         'password': 'wenyaopass',
         'name_first': 'Wenyao',
         'name_last': 'Chen',
@@ -20,7 +20,7 @@ USER_DATA = []
         'handle': "wchen"
     },
     {
-        'email': 'weiqiangzhuang24@gmail.com',
+        'email': '234@gmail.com',
         'password': 'weiqiangpass',
         'name_first': 'Weiqiang',
         'name_last': 'Zhuang',
@@ -29,7 +29,7 @@ USER_DATA = []
         'handle': "wzhuang"
     },
     {
-        'email': 'yison517@gmail.com',
+        'email': '517@gmail.com',
         'password': 'yixuanpass',
         'name_first': 'Yixuan',
         'name_last': 'Chen',
@@ -38,7 +38,7 @@ USER_DATA = []
         'handle': "ychen"
     },
     {
-        'email': 'yuhan.liang1021@gmail.com',
+        'email': '1021@gmail.com',
         'password': 'yuhanpass',
         'name_first': 'Yuhan',
         'name_last': 'Liang',

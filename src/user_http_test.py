@@ -51,7 +51,7 @@ def test_user_profile(url):
     users = json.loads(resp_profile.text)
     assert len(users['user']) == 6
     assert boyu_dict['u_id'] == users['user']['u_id']
-    assert users['user']['email'] == 'cbyisaac@gmail.com'
+    assert users['user']['email'] == '123@gmail.com'
     assert users['user']['name_first'] == 'Boyu'
     assert users['user']['name_last'] == 'Cai'
     assert len(users['user']['handle_str']) <= 20
