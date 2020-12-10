@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="2" failures="0" name="pytest" skips="0" tests="101" time="1.253"><testcase classname="src.auth_http_test" file="src\auth_http_test.py" line="37" name="test_auth_register" time="0.004578828811645508"><error message="test setup failure">@pytest.fixture
+    def url():
+        url_re = re.compile(r&apos; \* Running on ([^ ]*)&apos;)
+&gt;       server = Popen([&quot;python3&quot;, &quot;src/server.py&quot;], stderr=PIPE, stdout=PIPE)
+
+auth_http_test.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+d:\anaconda35.2.0\lib\subprocess.py:709: in __init__
+    restore_signals, start_new_session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;subprocess.Popen object at 0x00000292DF1EAE10&gt;
+args = &apos;python3 src/server.py&apos;, executable = None, preexec_fn = None
+close_fds = False, pass_fds = (), cwd = None, env = None
+startupinfo = &lt;subprocess.STARTUPINFO object at 0x00000292DF1CFA20&gt;
+creationflags = 0, shell = False, p2cread = Handle(772), p2cwrite = -1
+c2pread = 11, c2pwrite = Handle(1000), errread = 13, errwrite = Handle(1028)
+unused_restore_signals = True, unused_start_new_session = False
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       unused_restore_signals, unused_start_new_session):
+        &quot;&quot;&quot;Execute program (MS Windows version)&quot;&quot;&quot;
+    
+        assert not pass_fds, &quot;pass_fds not supported on Windows.&quot;
+    
+        if not isinstance(args, str):
+            args = list2cmdline(args)
+    
+        # Process startup details
+        if startupinfo is None:
+            startupinfo = STARTUPINFO()
+        if -1 not in (p2cread, c2pwrite, errwrite):
+            startupinfo.dwFlags |= _winapi.STARTF_USESTDHANDLES
+            startupinfo.hStdInput = p2cread
+            startupinfo.hStdOutput = c2pwrite
+            startupinfo.hStdError = errwrite
+    
+        if shell:
+            startupinfo.dwFlags |= _winapi.STARTF_USESHOWWINDOW
+            startupinfo.wShowWindow = _winapi.SW_HIDE
+            comspec = os.environ.get(&quot;COMSPEC&quot;, &quot;cmd.exe&quot;)
+            args = &apos;{} /c &quot;{}&quot;&apos;.format (comspec, args)
+    
+        # Start the process
+        try:
+            hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                                     # no special security
+                                     None, None,
+                                     int(not close_fds),
+                                     creationflags,
+                                     env,
+                                     os.fspath(cwd) if cwd is not None else None,
+&gt;                                    startupinfo)
+E                                    FileNotFoundError: [WinError 2] 系统找不到指定的文件。
+
+d:\anaconda35.2.0\lib\subprocess.py:997: FileNotFoundError</error></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="6" name="test_auth_register_InputError_email_not_valid_3" time="0.001016855239868164"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="25" name="test_auth_register_email_already_used" time="0.0"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="33" name="test_auth_register_password_lessthan6" time="0.0"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="40" name="test_auth_register_firstname_lessthan1" time="0.002021312713623047"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="47" name="test_auth_register_firstname_greaterthan50" time="0.002010822296142578"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="56" name="test_auth_register_lastname_lessthan1" time="0.0"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="62" name="test_auth_register_lastname_greaterthan50" time="0.0010063648223876953"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="69" name="test_auth_register_reture_type" time="0.0"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="77" name="test_auth_register_handle" time="0.0"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="93" name="test_auth_login_InputError_email_not_valid" time="0.003015756607055664"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="112" name="test_auth_login_InputError_not_user" time="0.0020296573638916016"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="119" name="test_auth_login_InputError_password_incorrect" time="0.0010027885437011719"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="127" name="test_auth_login_reture_type" time="0.0"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="136" name="test_auth_logout_valid_token" time="0.0010654926300048828"></testcase><testcase classname="src.auth_test" file="src\auth_test.py" line="144" name="test_auth_logout_invalid_token" time="0.0010166168212890625"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="32" name="test_channel_invite_channelid_notvalid" time="0.0010063648223876953"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="41" name="test_channel_invite_uid_not_valid" time="0.0"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="50" name="test_channel_invite_AccessError" time="0.0"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="60" name="test_channel_invite_return" time="0.0"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="70" name="test_channel_invite_data_store" time="0.0020253658294677734"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="101" name="test_channel_details_channelid_not_valid" time="0.001004934310913086"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="109" name="test_channel_details_AccessError" time="0.0009906291961669922"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="117" name="test_channel_details_Pass" time="0.0010046958923339844"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="168" name="test_channel_leave_channelid_not_valid" time="0.0019986629486083984"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="176" name="test_channel_leave_AccessError" time="0.0010039806365966797"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="185" name="test_channel_leave_return" time="0.0010030269622802734"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="193" name="test_channel_leave_member" time="0.0"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="221" name="test_channel_leave_owner" time="0.0"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="243" name="test_channel_join_channelid_not_valid" time="0.0"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="251" name="test_channel_join_AccessError_public" time="0.0"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="260" name="test_channel_join_AccessEror_private" time="0.0010056495666503906"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="269" name="test_channel_join_return" time="0.0015158653259277344"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="277" name="test_channel_join_data" time="0.0010280609130859375"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="307" name="test_channel_addowner_InputError_invalid_id" time="0.0015418529510498047"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="315" name="test_channel_addowner_InputError_user_already_owner" time="0.0005080699920654297"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="326" name="test_channel_addowner_AccessError_authorised_user_not_owner" time="0.001018524169921875"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="336" name="test_channel_addowner_AccessError_flockr_owner_not_member" time="0.0005064010620117188"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="346" name="test_channel_addowner_owner_of_channel" time="0.0010056495666503906"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="383" name="test_channel_addowner_owner_of_flockr" time="0.0010077953338623047"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="426" name="test_channel_addowner_already_member" time="0.0010068416595458984"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="464" name="test_channel_removeowner_InputError_invalid_id" time="0.000989675521850586"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="472" name="test_channel_removeowner_InputError_user_not_owner" time="0.0020246505737304688"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="482" name="test_channel_removeowner_AccessError_authorised_user_not_owner" time="0.0020117759704589844"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="493" name="test_channel_removeowner_AccessError_authorised_dlockr_owner_not_member" time="0.0020112991333007812"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="503" name="test_channel_delete_owner_of_channel" time="0.0010068416595458984"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="536" name="test_channel_delete_owner_of_flockr" time="0.0"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="563" name="test_channel_messages_invalid_channel_id" time="0.0010058879852294922"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="572" name="test_channel_messages_greater_total" time="0.0010061264038085938"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="582" name="test_channel_messages_user_not_member" time="0.0009520053863525391"></testcase><testcase classname="src.channel_test" file="src\channel_test.py" line="590" name="test_channel_messages" time="0.0040776729583740234"></testcase><testcase classname="src.channels_test" file="src\channels_test.py" line="18" name="test_channels_create_InputError" time="0.0010175704956054688"></testcase><testcase classname="src.channels_test" file="src\channels_test.py" line="25" name="test_channels_return_value" time="0.0"></testcase><testcase classname="src.channels_test" file="src\channels_test.py" line="33" name="test_channels_create_valid_name" time="0.0010182857513427734"></testcase><testcase classname="src.channels_test" file="src\channels_test.py" line="45" name="test_channels_list_havent_join_channels" time="0.0020105838775634766"></testcase><testcase classname="src.channels_test" file="src\channels_test.py" line="52" name="test_channels_list_invalid_token" time="0.0019948482513427734"></testcase><testcase classname="src.channels_test" file="src\channels_test.py" line="59" name="test_channels_list_join_some_channels" time="0.005015373229980469"><system-out>[]
+[]
+[{&apos;channel_id&apos;: 1, &apos;name&apos;: &apos;TeamOrange&apos;, &apos;member&apos;: [3], &apos;owner&apos;: [3], &apos;is_public&apos;: False}, {&apos;channel_id&apos;: 2, &apos;name&apos;: &apos;TeamGrape&apos;, &apos;member&apos;: [4], &apos;owner&apos;: [4], &apos;is_public&apos;: False}]
+[{&apos;channel_id&apos;: 1, &apos;name&apos;: &apos;TeamOrange&apos;, &apos;member&apos;: [3], &apos;owner&apos;: [3], &apos;is_public&apos;: False}, {&apos;channel_id&apos;: 2, &apos;name&apos;: &apos;TeamGrape&apos;, &apos;member&apos;: [4], &apos;owner&apos;: [4], &apos;is_public&apos;: False}]
+</system-out></testcase><testcase classname="src.channels_test" file="src\channels_test.py" line="86" name="test_channels_listall_havent_join_channels" time="0.003010272979736328"></testcase><testcase classname="src.channels_test" file="src\channels_test.py" line="94" name="test_channels_listall_invalid_token" time="0.0"></testcase><testcase classname="src.channels_test" file="src\channels_test.py" line="101" name="test_channels_listall" time="0.0010063648223876953"></testcase><testcase classname="src.echo_http_test" file="src\echo_http_test.py" line="33" name="test_echo" time="0.002008676528930664"><error message="test setup failure">@pytest.fixture
+    def url():
+        url_re = re.compile(r&apos; \* Running on ([^ ]*)&apos;)
+&gt;       server = Popen([&quot;python3&quot;, &quot;src/server.py&quot;], stderr=PIPE, stdout=PIPE)
+
+echo_http_test.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+d:\anaconda35.2.0\lib\subprocess.py:709: in __init__
+    restore_signals, start_new_session)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;subprocess.Popen object at 0x00000292DF0C1B70&gt;
+args = &apos;python3 src/server.py&apos;, executable = None, preexec_fn = None
+close_fds = False, pass_fds = (), cwd = None, env = None
+startupinfo = &lt;subprocess.STARTUPINFO object at 0x00000292DF0C1D30&gt;
+creationflags = 0, shell = False, p2cread = Handle(536), p2cwrite = -1
+c2pread = 11, c2pwrite = Handle(1008), errread = 13, errwrite = Handle(1036)
+unused_restore_signals = True, unused_start_new_session = False
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       unused_restore_signals, unused_start_new_session):
+        &quot;&quot;&quot;Execute program (MS Windows version)&quot;&quot;&quot;
+    
+        assert not pass_fds, &quot;pass_fds not supported on Windows.&quot;
+    
+        if not isinstance(args, str):
+            args = list2cmdline(args)
+    
+        # Process startup details
+        if startupinfo is None:
+            startupinfo = STARTUPINFO()
+        if -1 not in (p2cread, c2pwrite, errwrite):
+            startupinfo.dwFlags |= _winapi.STARTF_USESTDHANDLES
+            startupinfo.hStdInput = p2cread
+            startupinfo.hStdOutput = c2pwrite
+            startupinfo.hStdError = errwrite
+    
+        if shell:
+            startupinfo.dwFlags |= _winapi.STARTF_USESHOWWINDOW
+            startupinfo.wShowWindow = _winapi.SW_HIDE
+            comspec = os.environ.get(&quot;COMSPEC&quot;, &quot;cmd.exe&quot;)
+            args = &apos;{} /c &quot;{}&quot;&apos;.format (comspec, args)
+    
+        # Start the process
+        try:
+            hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                                     # no special security
+                                     None, None,
+                                     int(not close_fds),
+                                     creationflags,
+                                     env,
+                                     os.fspath(cwd) if cwd is not None else None,
+&gt;                                    startupinfo)
+E                                    FileNotFoundError: [WinError 2] 系统找不到指定的文件。
+
+d:\anaconda35.2.0\lib\subprocess.py:997: FileNotFoundError</error></testcase><testcase classname="src.echo_test" file="src\echo_test.py" line="4" name="test_echo" time="0.002009868621826172"></testcase><testcase classname="src.echo_test" file="src\echo_test.py" line="9" name="test_echo_except" time="0.0010025501251220703"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="21" name="test_message_send_InputError_more_than_1000" time="0.0029859542846679688"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="29" name="test_message_send_AccessError_not_join_channnel" time="0.0"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="34" name="test_message_send_return_type" time="0.0020122528076171875"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="40" name="test_message_send_data_store" time="0.0010044574737548828"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="56" name="test_message_remove_InputError_id_not_exist" time="0.0010068416595458984"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="62" name="test_message_remove_AccessError_not_member" time="0.0010056495666503906"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="69" name="test_message_remove_AccessError_not_sent_by_authorised_user" time="0.0010213851928710938"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="76" name="test_message_remove_return_type" time="0.001005411148071289"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="82" name="test_message_remove_authorised_user" time="0.0"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="96" name="test_message_remove_channel_owner" time="0.003007173538208008"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="107" name="test_message_remove_flockr_owner" time="0.002000093460083008"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="119" name="test_message_edit_AccessError_not_member" time="0.0010008811950683594"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="126" name="test_message_edit_AccessError_not_sent_by_authorised_user" time="0.0010035037994384766"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="133" name="test_message_edit_return_type" time="0.0010330677032470703"></testcase><testcase classname="src.message_test" file="src\message_test.py" line="139" name="test_message_edit_data_store" time="0.0"></testcase><testcase classname="src.other_test" file="src\other_test.py" line="22" name="test_users_all" time="0.0015218257904052734"></testcase><testcase classname="src.other_test" file="src\other_test.py" line="34" name="test_admin_userpermission_change_u_id" time="0.0015230178833007812"></testcase><testcase classname="src.other_test" file="src\other_test.py" line="41" name="test_admin_userpermission_change_permission_id" time="0.002027750015258789"></testcase><testcase classname="src.other_test" file="src\other_test.py" line="54" name="test_admin_userpermission_change_AccessError" time="0.0010044574737548828"></testcase><testcase classname="src.other_test" file="src\other_test.py" line="68" name="test_admin_userpermission_change_pass_addowner" time="0.0020127296447753906"></testcase><testcase classname="src.other_test" file="src\other_test.py" line="80" name="test_admin_userpermission_change_pass_removeowner" time="0.0009894371032714844"></testcase><testcase classname="src.other_test" file="src\other_test.py" line="94" name="test_search_message" time="0.0009906291961669922"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="14" name="test_user_profile_u_id_not_valid" time="0.0010073184967041016"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="20" name="test_user_profile_u_id_same_user" time="0.0"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="30" name="test_user_profile_u_id_diff_user" time="0.001009225845336914"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="40" name="test_user_profile_setname_name_empty_firstname" time="0.0010035037994384766"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="47" name="test_user_profile_setname_name_empty_lastname" time="0.0009889602661132812"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="54" name="test_user_profile_setname_firstname_longerthan50" time="0.0"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="60" name="test_user_profile_setname_lastname_longerthan50" time="0.0020110607147216797"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="68" name="test_user_profile_setname_change_firstname" time="0.001995086669921875"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="77" name="test_user_profile_setname_change_secondname" time="0.0010199546813964844"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="86" name="test_user_profile_setemail_email_not_valid" time="0.0010046958923339844"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="93" name="test_user_profile_setemail_email_already_used" time="0.0009853839874267578"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="100" name="test_user_profile_setemail_email_valid" time="0.0019927024841308594"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="107" name="test_user_profile_sethandle_InputError_out_of_range_1" time="0.0010042190551757812"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="112" name="test_user_profile_sethandle_InputError_out_of_range_2" time="0.0"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="118" name="test_user_profile_sethandle_InputError_used_handle" time="0.0010077953338623047"></testcase><testcase classname="src.user_test" file="src\user_test.py" line="125" name="test_user_profile_sethandle_pass" time="0.002009868621826172"></testcase></testsuite>

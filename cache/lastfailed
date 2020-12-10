@@ -1,0 +1,18 @@
+{
+  "src/auth_http_test.py": true, 
+  "src/auth_test.py": true, 
+  "src/channel_http_test.py": true, 
+  "src/channel_test.py": true, 
+  "src/channels_http_test.py": true, 
+  "src/channels_test.py": true, 
+  "src/echo_http_test.py": true, 
+  "src/echo_test.py": true, 
+  "src/message_http_test.py": true, 
+  "src/message_test.py": true, 
+  "src/other_http_test.py": true, 
+  "src/other_test.py": true, 
+  "src/standup_http_test.py": true, 
+  "src/standup_test.py": true, 
+  "src/user_http_test.py": true, 
+  "src/user_test.py": true
+}
