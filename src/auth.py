@@ -235,9 +235,9 @@ def auth_passwordreset_request(email: str) -> dict:
     # send an email contained the reset_code to the user
     # config
     mail_host = 'smtp.qq.com'
-    mail_user = '138876722'
-    mail_pass = 'rblmdebsmifdbjbf'
-    sender = '138876722@qq.com'
+    mail_user = '。。。'
+    mail_pass = '。。。'
+    sender = '。。。'
     receivers = [email]
     # content
     message = MIMEText(reset_code, 'plain', 'utf-8')
