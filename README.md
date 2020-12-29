@@ -1,5 +1,8 @@
 # COMP1531 Major Project
 
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Naereen/)
+
 ## Changelog
 
 * 28-10: Adding password reset as routes not automatically auth checking
